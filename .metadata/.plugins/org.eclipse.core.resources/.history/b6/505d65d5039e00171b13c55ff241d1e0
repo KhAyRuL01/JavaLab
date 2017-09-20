@@ -2,13 +2,13 @@ package genefind;
 
 public class Part2 {
 
-	 public String findSimpleGene(String dna,String startCodon,String stopCodon)
+	 public String findSimpleGene(String dna)
 	    {
 	        String result = "" ;
-	        int startIndex = dna.indexOf(startCodon);
+	        int startIndex = dna.indexOf("ATG");
 	        if(startIndex==-1)
 	            return "" ;
-	        int stopIndex = dna.indexOf(stopCodon,startIndex+3)+3;
+	        int stopIndex = dna.indexOf("TAA",startIndex+3)+3;
 	        if(stopIndex==-1)
 	            return "" ;
 	        else
@@ -22,24 +22,23 @@ public class Part2 {
 	    {
 	    	
 	        String dna = "CGTAAATGTAATCAT";
-	        String gene = findSimpleGene(dna,"ATG","TAA") ;
+	        String gene = findSimpleGene(dna) ;
 	        System.out.println("DNA Strand: "+dna+"\nGene: "+gene);
 	        dna = "CGTATGTCAT";
-	        gene = findSimpleGene(dna,"ATG","TAA") ;
+	        gene = findSimpleGene(dna) ;
 	        System.out.println("DNA Strand: "+dna+"\nGene: "+gene);
 	        dna = "CGAAAGTATCAT";
-	        gene = findSimpleGene(dna,"ATG","TAA") ;
+	        gene = findSimpleGene(dna) ;
 	        System.out.println("DNA Strand: "+dna+"\nGene: "+gene);
 	        dna = "CGTATGTAATCATAACG";
-	        gene = findSimpleGene(dna,"ATG","TAA") ;
+	        gene = findSimpleGene(dna) ;
 	        System.out.println("DNA Strand: "+dna+"\nGene: "+gene);
 	        dna = "CGTATGAATAACACG";
-	        gene = findSimpleGene(dna,"ATG","TAA") ;
+	        gene = findSimpleGene(dna) ;
 	        System.out.println("DNA Strand: "+dna+"\nGene: "+gene);
 	    }
 	public static void main(String[] args) {
-		Part1 gene = new Part1();
-    	gene.testSimpleGene();
+		
 	}
 
 }
