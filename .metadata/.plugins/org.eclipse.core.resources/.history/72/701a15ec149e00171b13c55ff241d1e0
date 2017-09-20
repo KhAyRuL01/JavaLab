@@ -31,17 +31,12 @@ public class Part3 {
 			System.out.println("true");
 		else
 			System.out.println("false");
-		String string = lastPart(string1,string2);
-		System.out.println("The part of the string after "+ string1 + " in " + string2 + " is " + string);
-		string1 = "bcd";
-		string = lastPart(string1,string2);
-		System.out.println("The part of the string after "+ string1 + " in " + string2 + " is " + string);
 	}
 	public String lastPart(String stringa,String stringb)
 	{
 		int indx = stringb.indexOf(stringa);
 		if(indx!=-1)
-			return stringb.substring(indx+stringa.length(),stringb.length());
+			return stringb.substring(indx,stringb.length());
 		return stringb;
 	}
 	public static void main(String[] args) {

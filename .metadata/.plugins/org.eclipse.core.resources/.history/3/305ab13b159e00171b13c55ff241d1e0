@@ -41,7 +41,7 @@ public class Part3 {
 	{
 		int indx = stringb.indexOf(stringa);
 		if(indx!=-1)
-			return stringb.substring(indx+stringa.length(),stringb.length());
+			return stringb.substring(indx,stringb.length());
 		return stringb;
 	}
 	public static void main(String[] args) {
