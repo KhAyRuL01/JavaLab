@@ -9,7 +9,7 @@ public class Part2 {
 	        if((int)dna.charAt(0)>=97)
 	        {
 	        	dna = dna.toUpperCase();
-	        	//System.out.println("YES"+dna);
+	        	System.out.println("YES"+dna);
 	        	flag = true;
 	        	
 	        }
@@ -48,7 +48,7 @@ public class Part2 {
 	        System.out.println("DNA Strand: "+dna+"\nGene: "+gene);
 	        dna = "atgcttcattaa";
 	        gene = findSimpleGene(dna,"ATG","TAA") ;
-	        System.out.println("DNA Strand: "+dna+"\nGene: "+gene);
+	        System.out.println("DNA Strand:v "+dna+"\nGene: "+gene);
 	    }
 	public static void main(String[] args) {
 		Part2 gene = new Part2();

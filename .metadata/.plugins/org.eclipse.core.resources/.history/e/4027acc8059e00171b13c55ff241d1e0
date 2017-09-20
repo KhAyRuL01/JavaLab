@@ -48,7 +48,7 @@ public class Part2 {
 	        System.out.println("DNA Strand: "+dna+"\nGene: "+gene);
 	        dna = "atgcttcattaa";
 	        gene = findSimpleGene(dna,"ATG","TAA") ;
-	        System.out.println("DNA Strand: "+dna+"\nGene: "+gene);
+	        System.out.println("DNA Strand:v "+dna+"\nGene: "+gene);
 	    }
 	public static void main(String[] args) {
 		Part2 gene = new Part2();

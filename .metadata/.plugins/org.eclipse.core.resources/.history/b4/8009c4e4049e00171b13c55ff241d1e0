@@ -5,14 +5,6 @@ public class Part2 {
 	 public String findSimpleGene(String dna,String startCodon,String stopCodon)
 	    {
 	        String result = "" ;
-	        boolean flag = false;
-	        if((int)dna.charAt(0)>=97)
-	        {
-	        	dna = dna.toUpperCase();
-	        	//System.out.println("YES"+dna);
-	        	flag = true;
-	        	
-	        }
 	        int startIndex = dna.indexOf(startCodon);
 	        if(startIndex==-1)
 	            return "" ;
@@ -24,8 +16,6 @@ public class Part2 {
 	            if((stopIndex-startIndex)%3==0)
 	                result = dna.substring(startIndex,stopIndex);
 	        }
-	        if(flag)
-	        	result = result.toLowerCase();
 	        return result;
 	    }
 	    void testSimpleGene()
@@ -42,16 +32,13 @@ public class Part2 {
 	        System.out.println("DNA Strand: "+dna+"\nGene: "+gene);
 	        dna = "CGTATGTAATCATAACG";
 	        gene = findSimpleGene(dna,"ATG","TAA") ;
-	        System.out.println("DNA Strandt: "+dna+"\nGene: "+gene);
-	        dna = "CGTATGAATAACACG";
-	        gene = findSimpleGene(dna,"ATG","TAA") ;
 	        System.out.println("DNA Strand: "+dna+"\nGene: "+gene);
-	        dna = "atgcttcattaa";
+	        dna = "CGTATGAATAACACG";
 	        gene = findSimpleGene(dna,"ATG","TAA") ;
 	        System.out.println("DNA Strand: "+dna+"\nGene: "+gene);
 	    }
 	public static void main(String[] args) {
-		Part2 gene = new Part2();
+		Part1 gene = new Part1();
     	gene.testSimpleGene();
 	}
 
