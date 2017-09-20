@@ -32,13 +32,6 @@ public class Part3 {
 		else
 			System.out.println("false");
 	}
-	public String lastPart(String stringa,String stringb)
-	{
-		int indx = stringb.indexOf(stringa);
-		if(indx!=-1)
-			return stringb.substring(indx,stringb.length());
-		return stringb;
-	}
 	public static void main(String[] args) {
 		Part3 object = new Part3();
 		object.testing();
