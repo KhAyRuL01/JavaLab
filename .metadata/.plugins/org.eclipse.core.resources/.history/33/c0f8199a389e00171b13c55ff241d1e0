@@ -9,13 +9,13 @@ public class Part4 {
 		URLResource url = new URLResource("http://www.dukelearntoprogram.com/course2/data/manylinks.html");
 		for(String line : url.lines())
 		{
+			System.out.println(line);
 			String string = line.toLowerCase();
-			int indx = string.indexOf("youtube.com") ;
-			if(indx!=-1)
+			if(string.indexOf("youtube.com")!=-1)
 			{
-				startindx = string.lastIndexOf("\"",indx);
-				stopindx = string.indexOf("\"",indx);
-				System.out.println(line.substring(startindx+1,stopindx));
+				startindx = string.indexOf("\"");
+				stopindx = string.lastIndexOf("\"",string.length()-1);
+				System.out.println(line.substring(startindx,stopindx));
 			}
 			
 		}
