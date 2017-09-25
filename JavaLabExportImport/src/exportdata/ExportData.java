@@ -13,6 +13,9 @@ public class ExportData {
 		listExportersTwoProducts(parser,"gold","diamond");
 		parser = file.getCSVParser();
 		System.out.println(numberOfExporters(parser,"gold"));
+		parser = file.getCSVParser();
+		bigExporters(parser,"$400,000,000");
+		
 	}
 	public String countryInf(CSVParser parser,String country)
 	{
@@ -51,6 +54,29 @@ public class ExportData {
 		}
 		return count;
 	}
+	
+	public void bigExporters(CSVParser parser,String value)
+	{
+		String string;
+		int len = value.length();
+		for(CSVRecord current : parser)
+		{
+			string = current.get("Value (dollars)");
+			if(string.length()>len)
+			{
+				System.out.println(current.get("Country") + " " + string);
+				continue;
+			}
+			if(string.length()==len)
+			{
+				if(string.compareTo(value)>=0)
+				{
+					System.out.println(current.get("Country") + " " + string);
+				}
+			}
+		}
+	}
+	
 	public static void main(String[] args)
 	{
 		ExportData data = new ExportData();
