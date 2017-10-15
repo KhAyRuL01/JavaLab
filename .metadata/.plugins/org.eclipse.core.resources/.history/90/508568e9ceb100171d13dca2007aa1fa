@@ -1,0 +1,15 @@
+package Lamda;
+
+interface Lamda
+{
+	void show();
+}
+
+public class LamdaExp implements Lamda {
+	public static void main(String[] args)
+	{
+		Lamda lamda = () -> System.out.print("hello");
+	}
+
+
+}
